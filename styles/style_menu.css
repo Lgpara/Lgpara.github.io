@@ -1,0 +1,115 @@
+
+.nav_arrow:active {
+    color: black;
+}
+.nav_arrow:visited {
+    color: black;
+}
+h1 {
+    font-family: 'Shrikhand';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 41px;
+}
+h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+.restaurantcard__foodlist {
+    margin: 0px 13px;
+}
+
+.nav_arrow {
+    position: absolute;
+    left: 24px;
+    top: 20px;
+    font-size: 16px;
+    color: black;
+}
+.main_image_container__img {
+    height: 275px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+}
+.main_image_container {
+    height: 275px;
+}
+.restaurantcard {
+    border-radius: 25px 25px 0 0;
+    background-color: #F7F7F7;
+    margin-top: -55px;
+    padding-bottom: 40px;
+}
+.restaurantcard__head {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 17px 42px 17px;
+    align-items: baseline;
+    padding-top: 32px;
+}
+.pink_button {
+    margin: 40px auto 0px auto;
+    width: 154px;
+    padding: 13px 16px;
+    text-align: center;
+}
+.green_line {
+    height: 4px;
+    width: 40px;
+    background-color: var(--color_1);
+    margin-top: 14px;
+}
+.restaurantcard__foodlist__foodinfos {
+    padding: 12px 15px;
+    background-color: white;
+    margin: 12px 0px;
+    border-radius: 15px;
+    box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1)
+}
+.restaurantcard__foodlist__foodinfos__details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.heart_icon {
+    font-size: 21px;
+    margin-right: 24px;
+}
+.main_image_container {
+    overflow: hidden;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+.main_image_container__img {
+    height: 300px;
+}
+.main_image_container {
+    height: 300px;
+}
+.restaurantcard {
+    width: 86%;
+    margin: -55px auto 0 auto;
+}
+}
+
+
+@media screen and (min-width: 1024px) {
+.main_image_container {
+    height: 390px;
+}
+.main_image_container__img {
+    height: 390px;
+    zoom: 250%;
+    margin-top: -140px;
+}
+.restaurantcard {
+    width: 74%;
+    margin: -55px auto 0 auto;
+}
+}
