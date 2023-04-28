@@ -9,7 +9,6 @@ $color_5: #9356DC;
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
-$test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 /* Mixin */
 
 @mixin pinkbutton {
@@ -39,10 +38,18 @@ $test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
     width: fit-content;
     border-radius: 2px;
 }
+@mixin gradientfont {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+}
 
 
 /* General */
-
+body {
+    overflow-x: hidden;
+}
 * {
     margin: 0;
     padding: 0;
@@ -63,6 +70,23 @@ a {
 .bold {
     font-weight: 900;
 }
+
+
+.blocpage {
+    transform: scale(1.2);
+    filter: grayscale(1) blur(30px);
+    animation: blur-out 0.5s ease-in-out forwards;
+    animation-delay: 0.4s;
+}
+
+
+@keyframes blur-out {
+    to {
+        filter: grayscale(0) blur(0);
+        transform: scale(1);
+    }
+}
+
 
 /* Header */
 
@@ -127,10 +151,12 @@ header {
     .reservation__btn {
         @include pinkbutton();
         margin-bottom: 57px;
-        transition: all 0.5s ease-out;
+        transform: scale(1);
+        transition: all 0.22s ease-in-out;
         &:hover {
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35); 
-            background: $test;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
+            opacity: 0.8;
+            transform: scale(1.01); 
         }
 
         @media #{$desktop} {
@@ -138,6 +164,9 @@ header {
         }
     }
 }
+
+
+
 
 /* Functionning */
 
@@ -270,7 +299,7 @@ header {
                 margin: 0;
             }
             .restaurants__cardscontainer__cards__newgreenstamp {
-                @include newgreenstamp()
+                @include newgreenstamp();
             }
 
             .restaurants__cardscontainer__cards__img {
@@ -301,10 +330,26 @@ header {
                 .restaurants__cardscontainer__cards__infos__txt {
                     margin: 0px 25px 0 13px;
                 }
-
-                .restaurants__cardscontainer__cards__infos__icon {
-                    font-size: 21px !important;
-                }
+                .restaurants__cardscontainer__cards__infos__iconcontainer {
+                    margin-top: 4px;
+                    display: flex;
+                    &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+                        opacity: 0;
+                    }
+                    &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+                        opacity: 1;
+                    }
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+                        font-size: 25px !important;
+                    }
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+                        font-size: 25px !important;
+                        opacity: 0;
+                        @include gradientfont();
+                        position: absolute;
+                        transition: opacity 0.35s ease-in-out;
+                    }
+                }    
             }
         }
     }
@@ -415,5 +460,44 @@ footer {
 
     .grid_placement_ajust {
         margin-top: -68px;
+    }
+}
+
+
+.loader {
+    position: absolute;
+    z-index: 99;
+    top: calc(97vh - 40px);
+    right: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+        font-size: 40px;
+        @include gradientfont();
+        animation: ustensils 0.8s ease;
+        opacity: 0;
+    }
+}
+@keyframes ustensils{
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 0 0 0 lighten($color_5, 10%);
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+        text-shadow: 0 0 5px lighten($color_5, 10%);
+    }
+    75% {
+        transform: scale(1.2);
+        opacity: 0.5;
+        text-shadow: 0 0 25px lighten($color_5, 10%);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        text-shadow: 0 0 10px lighten($color_5, 20%);
     }
 }

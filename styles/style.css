@@ -1,6 +1,10 @@
 /* Variables */
 /* Mixin */
 /* General */
+body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +26,19 @@ a {
   font-weight: 900;
 }
 
+.blocpage {
+  transform: scale(1.2);
+  filter: grayscale(1) blur(30px);
+  animation: blur-out 0.5s ease-in-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes blur-out {
+  to {
+    filter: grayscale(0) blur(0);
+    transform: scale(1);
+  }
+}
 /* Header */
 header {
   display: flex;
@@ -89,11 +106,13 @@ header .header__location .header__location__icon {
   border-radius: 25px;
   border: none;
   margin-bottom: 57px;
-  transition: all 0.5s ease-out;
+  transform: scale(1);
+  transition: all 0.22s ease-in-out;
 }
 .reservation .reservation__btn:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
+  opacity: 0.8;
+  transform: scale(1.01);
 }
 @media screen and (min-width: 1024px) {
   .reservation .reservation__btn {
@@ -272,8 +291,28 @@ header .header__location .header__location__icon {
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__txt {
   margin: 0px 25px 0 13px;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__icon {
-  font-size: 21px !important;
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer {
+  margin-top: 4px;
+  display: flex;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+  opacity: 0;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+  opacity: 1;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+  font-size: 25px !important;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+  font-size: 25px !important;
+  opacity: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+  position: absolute;
+  transition: opacity 0.35s ease-in-out;
 }
 
 footer {
@@ -374,5 +413,46 @@ footer .footercontentcontainer .footercontentcontainer__linkscontainer .footerco
   }
   .grid_placement_ajust {
     margin-top: -68px;
+  }
+}
+.loader {
+  position: absolute;
+  z-index: 99;
+  top: calc(97vh - 40px);
+  right: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader .icon {
+  font-size: 40px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+  animation: ustensils 0.8s ease;
+  opacity: 0;
+}
+
+@keyframes ustensils {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 #ae80e5;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    text-shadow: 0 0 5px #ae80e5;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    text-shadow: 0 0 25px #ae80e5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    text-shadow: 0 0 10px #c9abee;
   }
 }/*# sourceMappingURL=style.css.map */

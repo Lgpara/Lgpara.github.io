@@ -13,118 +13,133 @@
     <link rel="stylesheet" href="styles/style_menu.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <i class="fa-solid fa-arrow-right fa-rotate-180 nav_arrow"></i>
-        </a>
-        <img class="header__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">   
-    </header>
-    <main>
-        <div class="main_image_container">
-            <img class="main_image_container__img" src="restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant à la française">
-        </div>
-        <section class="restaurantcard">
-            <div class="restaurantcard__head">
-                <h1>À la française</h1>
-                <i class="fa-sharp fa-regular fa-heart"></i>
+    <div class="loader">
+        <i class="fa-solid fa-utensils icon"></i>
+    </div>
+    <div class="blocpage">
+        <header>
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-right fa-rotate-180 nav_arrow"></i>
+            </a>
+            <img class="header__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">   
+        </header>
+        <main>
+            <div class="main_image_container">
+                <img class="main_image_container__img" src="restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant à la française">
             </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Entrées</h2>
-                <div class="green_line"></div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Tartare de poulpe acidulé</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Aux zestes d'orange</p>
-                        <p class="bold">25€</p>
+            <section class="restaurantcard">
+                <div class="restaurantcard__head">
+                    <h1>À la française</h1>
+                    <div class="restaurantcard__head__iconbox">
+                        <i class="fa-sharp fa-regular fa-heart restaurantcard__head__iconbox__icon"></i>
+                        <i class="fa-solid fa-heart restaurantcard__head__iconbox__fullicon"></i>
                     </div>
                 </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Velouté de légumes d'antan</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Carotte, panais, topinambour</p>
-                        <p class="bold">35€</p>
+                <div class="restaurantcard__foodlist">
+                    <h2>Entrées</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Tartare de poulpe acidulé</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Aux zestes d'orange</p>
+                                <p class="price bold">25€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Velouté de légumes d'antan</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Carotte, panais, topinambour</p>
+                                <p class="price bold">35€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Soupe à l'oignon</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Revisitée</p>
+                                <p class="price bold">20€</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Soupe à l'oignon</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Revisitée</p>
-                        <p class="bold">20€</p>
+                <div class="restaurantcard__foodlist">
+                    <h2>Plats</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Coquilles Saint-Jacques</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Accompagnées d'une purée de panais</p>
+                                <p class="price bold">40€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Magret de canard</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Et parmentier de pommes de terre</p>
+                                <p class="price bold">35€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Pigeonneau d’Ille-et-Vilaine</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Sur son lit de gnocchis aux légumes</p>
+                                <p class="price bold">44€</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Plats</h2>
-                <div class="green_line"></div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Coquilles Saint-Jacques</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Accompagnées d'une purée de panais</p>
-                        <p class="bold">40€</p>
+                <div class="restaurantcard__foodlist">
+                    <h2>Desserts</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Pétales de violettes glacés</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Et purée de noisettes</p>
+                                <p class="price bold">18€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Fondant au chocolat</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Revisité</p>
+                                <p class="price bold">22€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Millefeuille croustillant</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Myrtilles et pâte d’amande</p>
+                                <p class="price bold">23€</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Magret de canard</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Et parmentier de pommes de terre</p>
-                        <p class="bold">35€</p>
-                    </div>
+                <div>
+                    <p class="pinkbtn pink_button">Commander</p>
                 </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Pigeonneau d’Ille-et-Vilaine</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Sur son lit de gnocchis aux légumes</p>
-                        <p class="bold">44€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Desserts</h2>
-                <div class="green_line"></div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Pétales de violettes glacés</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Et purée de noisettes</p>
-                        <p class="bold">18€</p>
-                    </div>
-                </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Fondant au chocolat</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Revisité</p>
-                        <p class="bold">22€</p>
-                    </div>
-                </div>
-                <div class="restaurantcard__foodlist__foodinfos">
-                    <h3>Millefeuille croustillant</h3>
-                    <div class="restaurantcard__foodlist__foodinfos__details">
-                        <p>Myrtilles et pâte d’amande</p>
-                        <p class="bold">23€</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="pink_button">Commander</p>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <div class="footercontentcontainer">
-            <img class="footercontentcontainer__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
-            <div class="footercontentcontainer__linkscontainer">
-                <div class="footercontentcontainer__linkscontainer__iconlink">
-                    <i class="fa-solid fa-utensils footercontentcontainer__linkscontainer__iconlink_icon"></i>
-                    <a href="">Proposer un restaurant</a>
+        </main>
+
+        <footer>
+            <div class="footercontentcontainer">
+                <img class="footercontentcontainer__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
+                <div class="footercontentcontainer__linkscontainer">
+                    <div class="footercontentcontainer__linkscontainer__iconlink">
+                        <i class="fa-solid fa-utensils footercontentcontainer__linkscontainer__iconlink_icon"></i>
+                        <a href="">Proposer un restaurant</a>
+                    </div>
+                    <div class="footercontentcontainer__linkscontainer__iconlink footercontentcontainer__linkscontainer__iconlink--placementajust">
+                        <i class="fa-solid fa-handshake-angle footercontentcontainer__linkscontainer__iconlink_icon"></i>
+                        <a href="">Devenir partenaire</a>
+                    </div>
+                    <a class="footercontentcontainer__linkscontainer__link footercontentcontainer__linkscontainer__link--marginajust" href="">Mentions légales</a>
+                    <a class="footercontentcontainer__linkscontainer__link" href="mailto:thisemailisaplaceholder@outlook.com">Contact</a>
                 </div>
-                <div class="footercontentcontainer__linkscontainer__iconlink placement_ajust_001">
-                    <i class="fa-solid fa-handshake-angle footercontentcontainer__linkscontainer__iconlink_icon"></i>
-                    <a href="">Devenir partenaire</a>
-                </div>
-                <a class="footercontentcontainer__linkscontainer_link footercontentcontainer__linkscontainer__link--marginajust" href="">Mentions légales</a>
-                <a class="footercontentcontainer__linkscontainer_link" href="">Contact</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>

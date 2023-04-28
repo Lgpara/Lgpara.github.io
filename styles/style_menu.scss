@@ -1,9 +1,15 @@
 /* Variables */
+$color_1: #99E2D0;
+$color_2: #008766;
+$color_3: #89C8FA;
+$color_4: #003A68;
+$color_5: #9356DC;
+$test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
-/*Mixin*/ 
+/*Mixin*/
 
 @mixin pinkbutton {
     color: white;
@@ -12,13 +18,25 @@ $desktop: "screen and (min-width: 1024px)";
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    background: linear-gradient(355deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
 }
+@mixin nowrap_ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+}
+@mixin gradientfont {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+}
 
 /*General*/
+
 
 h1 {
     font-family: 'Shrikhand';
@@ -27,6 +45,7 @@ h1 {
     font-size: 28px;
     line-height: 41px;
 }
+
 h2 {
     font-style: normal;
     font-weight: 300;
@@ -34,10 +53,11 @@ h2 {
     line-height: 19px;
     text-transform: uppercase;
 }
+
 .green_line {
     height: 4px;
     width: 40px;
-    background-color: var(--color_1);
+    background-color: $color_1;
     margin-top: 14px;
 }
 
@@ -46,13 +66,19 @@ h2 {
 .nav_arrow {
     height: 16px;
     position: absolute;
-    left: 24px;
-    top: 22px;
     font-size: 16px;
     color: black;
+    top: 20px;
+    left: 24px;
+    @media #{$desktop} {
+        top: 40px;
+    }
+
+    
     &:visited {
         color: black;
     }
+
     &:active {
         color: black;
     }
@@ -64,67 +90,155 @@ main {
     .main_image_container {
         height: 275px;
         overflow: hidden;
+
         @media #{$tablet} {
             height: 300px;
         }
+
         @media #{$desktop} {
             height: 390px;
         }
+
         .main_image_container__img {
             height: 275px;
             width: 100%;
             object-fit: cover;
             position: relative;
             z-index: -1;
+
             @media #{$tablet} {
                 height: 300px;
             }
+
             @media #{$desktop} {
                 height: 390px;
                 zoom: 250%;
-                margin-top: -140px;    
+                margin-top: -140px;
             }
-        }    
+        }
     }
+
     .restaurantcard {
         border-radius: 25px 25px 0 0;
         background-color: #F7F7F7;
         margin-top: -55px;
         padding: 0 13px 40px 13px;
+
         @media #{$tablet} {
             width: 86%;
             margin: -55px auto 0 auto;
         }
+
         @media #{$desktop} {
             width: 74%;
         }
+
         .restaurantcard__head {
             display: flex;
-            justify-content: space-between;
-            margin: 0px 17px 42px 17px;
+            margin-bottom: 42px;
             align-items: baseline;
             padding-top: 32px;
+            justify-content: space-between;
+            @media #{$tablet} {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .restaurantcard__head__iconbox {
+                display: flex;
+                margin-right: 10px;
+                margin-left: 24px;
+                &:hover .restaurantcard__head__iconbox__icon {
+                    opacity: 0;
+                }
+                &:hover .restaurantcard__head__iconbox__fullicon {
+                    opacity: 1;
+                }
+                .restaurantcard__head__iconbox__icon {
+                    font-size: 21px;
+
+                }
+                .restaurantcard__head__iconbox__fullicon {
+                    font-size: 21px;
+                    position: absolute;
+                    opacity: 0;
+                    @include gradientfont();
+                    transition: opacity 0.35s ease-in-out;
+                }
+            }
+    
         }
+
         .restaurantcard__foodlist {
             .restaurantcard__foodlist__foodinfos {
-                padding: 12px 15px;
                 background-color: white;
                 margin: 12px 0px;
                 border-radius: 15px;
                 box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                .restaurantcard__foodlist__foodinfos__title {
+                    margin: 12px 0 5px 15px;
+                    @include nowrap_ellipsis();
+                }
+                &::before {
+                    content: "\f058";
+                    height: 72px;
+                    width: 72px;
+                    background-color: $color_1;
+                    margin-bottom: -72px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 25px;
+                    font-family: "Font Awesome 5 Free";
+                    color: white;
+                    position: relative;
+                    top: 0;
+                    left: 100%;
+                    transition: transform 0.25s ease-in-out;
+                }
+                &:hover::before {
+                    transform: translate(-72px, 0);
+                }
+                &:hover .restaurantcard__foodlist__foodinfos__title {
+                    padding-right: 101px;
+                }
+                &:hover .restaurantcard__foodlist__foodinfos__details .price {
+                    transform: translate(-72px, 0);
+                    margin-left: 72px;
+                }
                 .restaurantcard__foodlist__foodinfos__details {
                     display: flex;
                     justify-content: space-between;
-                    margin-top: 5px;
+                    margin: 0 15px 12px 15px;
+                    :first-child {
+                        @include nowrap_ellipsis();
+                    }
+                    .price {
+                        display: block;
+                        transition: transform 0.25s ease-in-out;
+                    }
                 }
             }
         }
     }
 }
+
+
+
+
+
+
 .pink_button {
     @include pinkbutton();
     margin: 40px auto 0px auto;
     width: 154px;
     padding: 13px 16px;
     text-align: center;
+    transition: all 0.2s ease;
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+        opacity: 0.9;
+        transform: scale(1.01); 
+    }
 }

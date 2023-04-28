@@ -13,124 +13,133 @@
     <link rel="stylesheet" href="styles/style_menu.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <i class="fa-solid fa-arrow-right fa-rotate-180 nav_arrow"></i>
-        </a>
-        <img class="header__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
-    </header>
-    <main>
-        <div class="main_image_container">
-            <img class="main_image_container__img" src="restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant le délice des sens">
-        </div>
-        <section class="restaurantcard">
-            <div class="restaurantcard__head">
-                <h1>Le délice des sens</h1>
-                <i class="fa-sharp fa-regular fa-heart"></i>
+    <div class="loader">
+        <i class="fa-solid fa-utensils icon"></i>
+    </div>
+    <div class="blocpage">
+        <header>
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-right fa-rotate-180 nav_arrow"></i>
+            </a>
+            <img class="header__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
+        </header>
+        <main>
+            <div class="main_image_container">
+                <img class="main_image_container__img" src="restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant le délice des sens">
             </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Entrées</h2>
-                <div class="green_line"></div>
-                <div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Tartare de thon</h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Assaisonné au yuzu</p>
-                            <p class="bold">25€</p>
-                        </div>
+            <section class="restaurantcard">
+                <div class="restaurantcard__head">
+                    <h1>Le délice des sens</h1>
+                    <div class="restaurantcard__head__iconbox">
+                        <i class="fa-sharp fa-regular fa-heart restaurantcard__head__iconbox__icon"></i>
+                        <i class="fa-solid fa-heart restaurantcard__head__iconbox__fullicon"></i>
                     </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Bouchée de homard croustillant </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Et sa farandole de petits légumes</p>
-                            <p class="bold">35€</p>
+                </div>
+                <div class="restaurantcard__foodlist">
+                    <h2>Entrées</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Tartare de thon</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Assaisonné au yuzu</p>
+                                <p class="price bold">25€</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Poulet rôti aux herbes de Provence </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Et sa crème de truffe</p>
-                            <p class="bold">40€</p>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Bouchée de homard croustillant</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Et sa farandole de petits légumes</p>
+                                <p class="price bold">35€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Velouté de cèpes</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Aux truffes</p>
+                                <p class="price bold">20€</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Plats</h2>
-                <div class="green_line"></div>
-                <div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Poulet rôti aux herbes de Provence </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Et sa crème de truffe</p>
-                            <p class="bold">40€</p>
+                <div class="restaurantcard__foodlist">
+                    <h2>Plats</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Poulet rôti aux herbes de Provence </h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Et sa crème de truffe</p>
+                                <p class="price bold">40€</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Langouste rôtie </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Et ses légumes de saison</p>
-                            <p class="bold">35€</p>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Langouste rôtie</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Et ses légumes de saison</p>
+                                <p class="price bold">35€</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Côte de bœuf Angus </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Et sa purée de panais</p>
-                            <p class="bold">44€</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="restaurantcard__foodlist">
-                <h2>Desserts</h2>
-                <div class="green_line"></div>
-                <div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Œuf au plat</h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Assaisonné à la truffe sur lit de caviar</p>
-                            <p class="bold">76€</p>
-                        </div>
-                    </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Crème brulée </h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>Revisitée</p>
-                            <p class="bold">22€</p>
-                        </div>
-                    </div>
-                    <div class="restaurantcard__foodlist__foodinfos">
-                        <h3>Tiramisu</h3>
-                        <div class="restaurantcard__foodlist__foodinfos__details">
-                            <p>À la noisette</p>
-                            <p class="bold">23€</p>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Côte de bœuf Angus </h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Aux agrumes</p>
+                                <p class="price bold">44€</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <p class="pinkbtn pink_button">Commander</p>
-            </div>
-        </section>
-    </main>
+                <div class="restaurantcard__foodlist">
+                    <h2>Desserts</h2>
+                    <div class="green_line"></div>
+                    <div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Farandole de desserts</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Du chef</p>
+                                <p class="price bold">18€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Crème brulée</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>Revisitée</p>
+                                <p class="price bold">22€</p>
+                            </div>
+                        </div>
+                        <div class="restaurantcard__foodlist__foodinfos">
+                            <h3 class="restaurantcard__foodlist__foodinfos__title">Tiramisu</h3>
+                            <div class="restaurantcard__foodlist__foodinfos__details">
+                                <p>À la noisette</p>
+                                <p class="price bold">23€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="pinkbtn pink_button">Commander</p>
+                </div>
+            </section>
 
-    <footer>
-        <div class="footercontentcontainer">
-            <img class="footercontentcontainer__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
-            <div class="footercontentcontainer__linkscontainer">
-                <div class="footercontentcontainer__linkscontainer__iconlink">
-                    <i class="fa-solid fa-utensils footercontentcontainer__linkscontainer__iconlink_icon"></i>
-                    <a href="">Proposer un restaurant</a>
+        </main>
+
+        <footer>
+            <div class="footercontentcontainer">
+                <img class="footercontentcontainer__logo" src="logo/ohmyfood.png" alt="Logo ohmyfood">
+                <div class="footercontentcontainer__linkscontainer">
+                    <div class="footercontentcontainer__linkscontainer__iconlink">
+                        <i class="fa-solid fa-utensils footercontentcontainer__linkscontainer__iconlink_icon"></i>
+                        <a href="">Proposer un restaurant</a>
+                    </div>
+                    <div class="footercontentcontainer__linkscontainer__iconlink footercontentcontainer__linkscontainer__iconlink--placementajust">
+                        <i class="fa-solid fa-handshake-angle footercontentcontainer__linkscontainer__iconlink_icon"></i>
+                        <a href="">Devenir partenaire</a>
+                    </div>
+                    <a class="footercontentcontainer__linkscontainer__link footercontentcontainer__linkscontainer__link--marginajust" href="">Mentions légales</a>
+                    <a class="footercontentcontainer__linkscontainer__link" href="mailto:thisemailisaplaceholder@outlook.com">Contact</a>
                 </div>
-                <div class="footercontentcontainer__linkscontainer__iconlink placement_ajust_001">
-                    <i class="fa-solid fa-handshake-angle footercontentcontainer__linkscontainer__iconlink_icon"></i>
-                    <a href="">Devenir partenaire</a>
-                </div>
-                <a class="footercontentcontainer__linkscontainer_link footercontentcontainer__linkscontainer__link--marginajust" href="">Mentions légales</a>
-                <a class="footercontentcontainer__linkscontainer_link" href="">Contact</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>    
 </body>
 </html>
