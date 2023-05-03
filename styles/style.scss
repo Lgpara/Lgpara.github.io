@@ -6,6 +6,10 @@ $color_3: #89C8FA;
 $color_4: #003A68;
 $color_5: #9356DC;
 
+$lightgrey: #F6F6F6;
+$grey: #EAEAEA;
+$darkgrey: #353535;
+
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
@@ -19,7 +23,7 @@ $desktop: "screen and (min-width: 1024px)";
     font-size: 16px;
     line-height: 19px;
     background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
 }
@@ -38,6 +42,7 @@ $desktop: "screen and (min-width: 1024px)";
     width: fit-content;
     border-radius: 2px;
 }
+
 @mixin gradientfont {
     background-clip: text;
     -webkit-background-clip: text;
@@ -45,11 +50,42 @@ $desktop: "screen and (min-width: 1024px)";
     background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 
+/* Keyframes */
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        text-shadow: 0 0 0 $darkgrey;
+    }
+
+    70% {
+        transform: scale(1);
+        text-shadow: 0 30px 40px $darkgrey;
+    }
+
+    100% {
+        transform: scale(0.95);
+        text-shadow: 0 0 0 $darkgrey;
+    }
+}
+
+@keyframes endload {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
 
 /* General */
-body {
-    overflow-x: hidden;
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -71,22 +107,35 @@ a {
     font-weight: 900;
 }
 
+/* Loader */
 
-.blocpage {
-    transform: scale(1.2);
-    filter: grayscale(1) blur(30px);
-    animation: blur-out 0.5s ease-in-out forwards;
-    animation-delay: 0.4s;
-}
+.loader {
+    width: 100vw;
+    height: 2279px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(234, 234, 234, 0.95);
+    animation: endload 2s ease forwards;
 
+    @media #{$tablet} {
+        height: 2575px;
+    }
 
-@keyframes blur-out {
-    to {
-        filter: grayscale(0) blur(0);
-        transform: scale(1);
+    @media #{$desktop} {
+        height: 1409px;
+    }
+
+    p {
+        font-family: "Shrikhand";
+        font-size: 12vw;
+        padding-top: 34vh;
+        color: $darkgrey;
+        animation: pulse 1.5s ease-in-out;
     }
 }
-
 
 /* Header */
 
@@ -109,13 +158,13 @@ header {
     }
 
     .header__location {
-        background-color: #EAEAEA;
+        background-color: $grey;
         display: flex;
         align-items: baseline;
         justify-content: center;
         padding: 15.5px 0;
         font-size: 16px;
-        color: #353535;
+        color: $darkgrey;
 
         .header__location__icon {
             margin-right: 17px;
@@ -129,7 +178,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: whitesmoke;
+    background: $lightgrey;
     text-align: center;
 
     .reservation__title {
@@ -153,10 +202,11 @@ header {
         margin-bottom: 57px;
         transform: scale(1);
         transition: all 0.22s ease-in-out;
+
         &:hover {
-            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
             opacity: 0.8;
-            transform: scale(1.01); 
+            transform: scale(1.01);
         }
 
         @media #{$desktop} {
@@ -176,6 +226,7 @@ header {
     width: 100%;
 
     @media #{$desktop} {
+        width: 76%;
         padding: 50px 13%;
     }
 
@@ -198,7 +249,7 @@ header {
 
             @media #{$desktop} {
                 flex-direction: row;
-                width: 74%;
+                width: 98%;
                 justify-content: space-between;
             }
 
@@ -207,9 +258,9 @@ header {
                 width: 95%;
                 margin: auto;
                 padding: 28px 0px;
-                background-color: whitesmoke;
+                background-color: $lightgrey;
                 border-radius: 20px;
-                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
                 margin-bottom: 24px;
                 align-items: center;
 
@@ -264,7 +315,7 @@ header {
 
 .restaurants {
     padding: 54px 20px 66px 20px;
-    background-color: whitesmoke;
+    background-color: $lightgrey;
 
     @media #{$desktop} {
         padding: 30px 13% 66px 13%;
@@ -286,7 +337,7 @@ header {
         .restaurants__cardscontainer__cards {
             border-radius: 15px;
             overflow: hidden;
-            margin: 18px 0px;
+            margin: 18px 0;
 
             &:active {
                 color: black;
@@ -295,9 +346,11 @@ header {
             &:visited {
                 color: black;
             }
+
             @media #{$desktop} {
                 margin: 0;
             }
+
             .restaurants__cardscontainer__cards__newgreenstamp {
                 @include newgreenstamp();
             }
@@ -328,20 +381,25 @@ header {
                 padding: 16px 25px 12px 13px;
 
                 .restaurants__cardscontainer__cards__infos__txt {
-                    margin: 0px 25px 0 13px;
+                    margin: 0 25px 0 13px;
                 }
+
                 .restaurants__cardscontainer__cards__infos__iconcontainer {
                     margin-top: 4px;
                     display: flex;
+
                     &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
                         opacity: 0;
                     }
+
                     &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
                         opacity: 1;
                     }
+
                     .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
                         font-size: 25px !important;
                     }
+
                     .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
                         font-size: 25px !important;
                         opacity: 0;
@@ -349,7 +407,7 @@ header {
                         position: absolute;
                         transition: opacity 0.35s ease-in-out;
                     }
-                }    
+                }
             }
         }
     }
@@ -357,7 +415,7 @@ header {
 
 footer {
     color: white;
-    background-color: #353535;
+    background-color: $darkgrey;
 
     @media #{$tablet} {
         text-align: center;
@@ -371,7 +429,7 @@ footer {
     }
 
     a {
-        color: white !important;
+        color: white;
     }
 
     .footercontentcontainer {
@@ -385,7 +443,7 @@ footer {
         .footercontentcontainer__logo {
             height: 18px;
             filter: invert(1);
-            margin: 25px 0px 23px 22px;
+            margin: 25px 0 23px 22px;
 
             @media #{$desktop} {
                 height: 18px;
@@ -409,7 +467,8 @@ footer {
                 margin-bottom: 7px;
 
                 @media #{$desktop} {
-                    margin: 0px 10px;
+                    margin: 0 10px;
+
                     &--placementajust {
                         margin-right: 50px;
                     }
@@ -425,6 +484,7 @@ footer {
                 @media #{$desktop} {
                     margin: 0px 10px;
                 }
+
                 &--marginajust {
                     margin-right: 10px;
                     margin-bottom: 6px;
@@ -435,7 +495,7 @@ footer {
 }
 
 
-/**    **/
+/* Grid setup for restaurant's cards (desktop) */
 
 @media #{$desktop} {
     .grid_element_1 {
@@ -460,44 +520,5 @@ footer {
 
     .grid_placement_ajust {
         margin-top: -68px;
-    }
-}
-
-
-.loader {
-    position: absolute;
-    z-index: 99;
-    top: calc(97vh - 40px);
-    right: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .icon {
-        font-size: 40px;
-        @include gradientfont();
-        animation: ustensils 0.8s ease;
-        opacity: 0;
-    }
-}
-@keyframes ustensils{
-    0% {
-        transform: scale(1);
-        opacity: 1;
-        text-shadow: 0 0 0 lighten($color_5, 10%);
-    }
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-        text-shadow: 0 0 5px lighten($color_5, 10%);
-    }
-    75% {
-        transform: scale(1.2);
-        opacity: 0.5;
-        text-shadow: 0 0 25px lighten($color_5, 10%);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-        text-shadow: 0 0 10px lighten($color_5, 20%);
     }
 }

@@ -9,25 +9,27 @@ $test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
-/*Mixin*/
+/* Mixin */
 
 @mixin pinkbutton {
     color: white;
-    padding: 13px 18.75px;
+    padding: 13px 18px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
 }
+
 @mixin nowrap_ellipsis {
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;    
+    text-overflow: ellipsis;
 }
+
 @mixin gradientfont {
     background-clip: text;
     -webkit-background-clip: text;
@@ -35,7 +37,7 @@ $desktop: "screen and (min-width: 1024px)";
     background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 
-/*General*/
+/* General */
 
 
 h1 {
@@ -70,11 +72,12 @@ h2 {
     color: black;
     top: 20px;
     left: 24px;
+
     @media #{$desktop} {
         top: 40px;
     }
 
-    
+
     &:visited {
         color: black;
     }
@@ -133,12 +136,14 @@ main {
             width: 74%;
         }
 
+
         .restaurantcard__head {
             display: flex;
             margin-bottom: 42px;
             align-items: baseline;
             padding-top: 32px;
             justify-content: space-between;
+
             @media #{$tablet} {
                 justify-content: center;
                 align-items: center;
@@ -148,16 +153,20 @@ main {
                 display: flex;
                 margin-right: 10px;
                 margin-left: 24px;
+
                 &:hover .restaurantcard__head__iconbox__icon {
                     opacity: 0;
                 }
+
                 &:hover .restaurantcard__head__iconbox__fullicon {
                     opacity: 1;
                 }
+
                 .restaurantcard__head__iconbox__icon {
                     font-size: 21px;
 
                 }
+
                 .restaurantcard__head__iconbox__fullicon {
                     font-size: 21px;
                     position: absolute;
@@ -166,7 +175,7 @@ main {
                     transition: opacity 0.35s ease-in-out;
                 }
             }
-    
+
         }
 
         .restaurantcard__foodlist {
@@ -174,12 +183,14 @@ main {
                 background-color: white;
                 margin: 12px 0px;
                 border-radius: 15px;
-                box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
+
                 .restaurantcard__foodlist__foodinfos__title {
                     margin: 12px 0 5px 15px;
                     @include nowrap_ellipsis();
                 }
+
                 &::before {
                     content: "\f058";
                     height: 72px;
@@ -197,23 +208,29 @@ main {
                     left: 100%;
                     transition: transform 0.25s ease-in-out;
                 }
+
                 &:hover::before {
                     transform: translate(-72px, 0);
                 }
+
                 &:hover .restaurantcard__foodlist__foodinfos__title {
                     padding-right: 101px;
                 }
+
                 &:hover .restaurantcard__foodlist__foodinfos__details .price {
                     transform: translate(-72px, 0);
                     margin-left: 72px;
                 }
+
                 .restaurantcard__foodlist__foodinfos__details {
                     display: flex;
                     justify-content: space-between;
                     margin: 0 15px 12px 15px;
+
                     :first-child {
                         @include nowrap_ellipsis();
                     }
+
                     .price {
                         display: block;
                         transition: transform 0.25s ease-in-out;
@@ -221,24 +238,23 @@ main {
                 }
             }
         }
+
+        .pink_button {
+            @include pinkbutton();
+            margin: 40px auto 0 auto;
+            width: 154px;
+            padding: 13px 16px;
+            text-align: center;
+            transition: all 0.2s ease;
+
+            &:hover {
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+                opacity: 0.9;
+                transform: scale(1.01);
+            }
+        }
     }
 }
 
 
 
-
-
-
-.pink_button {
-    @include pinkbutton();
-    margin: 40px auto 0px auto;
-    width: 154px;
-    padding: 13px 16px;
-    text-align: center;
-    transition: all 0.2s ease;
-    &:hover {
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
-        opacity: 0.9;
-        transform: scale(1.01); 
-    }
-}

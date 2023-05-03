@@ -1,6 +1,6 @@
 /* Variables */
-/*Mixin*/
-/*General*/
+/* Mixin */
+/* General */
 h1 {
   font-family: "Shrikhand";
   font-style: italic;
@@ -138,7 +138,7 @@ main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodin
   background-color: white;
   margin: 12px 0px;
   border-radius: 15px;
-  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos .restaurantcard__foodlist__foodinfos__title {
@@ -188,25 +188,24 @@ main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodin
   display: block;
   transition: transform 0.25s ease-in-out;
 }
-
-.pink_button {
+main .restaurantcard .pink_button {
   color: white;
-  padding: 13px 18.75px;
+  padding: 13px 18px;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   border: none;
-  margin: 40px auto 0px auto;
+  margin: 40px auto 0 auto;
   width: 154px;
   padding: 13px 16px;
   text-align: center;
   transition: all 0.2s ease;
 }
-.pink_button:hover {
+main .restaurantcard .pink_button:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
   opacity: 0.9;
   transform: scale(1.01);
