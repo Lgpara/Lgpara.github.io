@@ -37,6 +37,16 @@ $desktop: "screen and (min-width: 1024px)";
     background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 
+
+/* Keyframes */
+
+@keyframes opacityheight100 {
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
 /* General */
 
 
@@ -237,6 +247,21 @@ main {
                     }
                 }
             }
+        }
+        .entrée {
+            height: 200px;
+            opacity: 0;
+            animation: opacityheight100 0.5s ease-in-out 0s forwards;
+        }
+        .plats {
+            height: 200px;
+            opacity: 0;
+            animation: opacityheight100 0.5s ease-in-out 0.3s forwards;
+        }
+        .desserts {
+            height: 200px;
+            opacity: 0;
+            animation: opacityheight100 0.5s ease-in-out 0.6s forwards;
         }
 
         .pink_button {

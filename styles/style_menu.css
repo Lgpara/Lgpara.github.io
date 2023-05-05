@@ -1,5 +1,13 @@
+@charset "UTF-8";
 /* Variables */
 /* Mixin */
+/* Keyframes */
+@keyframes opacityheight100 {
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
 /* General */
 h1 {
   font-family: "Shrikhand";
@@ -187,6 +195,21 @@ main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodin
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos .restaurantcard__foodlist__foodinfos__details .price {
   display: block;
   transition: transform 0.25s ease-in-out;
+}
+main .restaurantcard .entrée {
+  height: 200px;
+  opacity: 0;
+  animation: opacityheight100 0.5s ease-in-out 0s forwards;
+}
+main .restaurantcard .plats {
+  height: 200px;
+  opacity: 0;
+  animation: opacityheight100 0.5s ease-in-out 0.3s forwards;
+}
+main .restaurantcard .desserts {
+  height: 200px;
+  opacity: 0;
+  animation: opacityheight100 0.5s ease-in-out 0.6s forwards;
 }
 main .restaurantcard .pink_button {
   color: white;

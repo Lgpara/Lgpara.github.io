@@ -129,9 +129,10 @@ a {
     }
 
     p {
+        position: fixed;
+        top: 34vh;
         font-family: "Shrikhand";
         font-size: 12vw;
-        padding-top: 34vh;
         color: $darkgrey;
         animation: pulse 1.5s ease-in-out;
     }
@@ -331,7 +332,7 @@ header {
 
         @media #{$desktop} {
             display: grid;
-            gap: 90px;
+            gap: 5vw;
         }
 
         .restaurants__cardscontainer__cards {
