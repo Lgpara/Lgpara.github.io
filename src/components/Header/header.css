@@ -1,0 +1,202 @@
+@keyframes langBtnAnim {
+  0% {
+    filter: grayscale(0);
+  }
+  50% {
+    filter: grayscale(0.6);
+  }
+  100% {
+    filter: grayscale(0);
+  }
+}
+@keyframes showHeader {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+header {
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0 20px 0 0;
+  height: 60px;
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border);
+  box-shadow: var(--boxshdw);
+  animation: showHeader 0.4s ease-in-out forwards;
+}
+header * {
+  color: var(--dmtext);
+}
+@media only screen and (max-width: 1023px) {
+  header .openAnimSidePannel {
+    height: 100vh;
+  }
+}
+header .elements {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 1023px) {
+  header .elements {
+    transition: all 0.5s;
+    width: 0;
+    height: 100%;
+    background-color: var(--background);
+    align-items: start;
+    flex-direction: column;
+  }
+}
+header .elements .navIcon {
+  font-size: 26px !important;
+  padding: 0 20px;
+  display: flex;
+  margin-right: 20px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1023px) {
+  header .elements .navIcon {
+    margin: 18px 0 36px 0px;
+  }
+}
+header .elements .navIcon:hover {
+  transform: scale(1.05);
+}
+header .elements nav {
+  padding: 0 20px;
+  margin-top: -2px;
+  display: flex;
+}
+@media only screen and (max-width: 1023px) {
+  header .elements nav {
+    flex-direction: column;
+    transform: translateX(-180px);
+    transition: all 0.2s ease-in-out;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header .elements nav {
+    margin-top: -2px;
+    transform: translateX(-540px);
+    transition: all 0.5s;
+  }
+}
+header .elements nav a {
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 23px;
+  display: block;
+  transition: all 0.2s;
+}
+@media only screen and (max-width: 1023px) {
+  header .elements nav a {
+    margin-bottom: 6px;
+    padding: 2px 5px;
+    background-color: var(--background);
+    border: var(--border);
+  }
+}
+header .elements nav a:hover {
+  transform: scale(1.05);
+}
+@media only screen and (min-width: 1024px) {
+  header .elements .openAnim {
+    transform: translateX(-40px);
+  }
+}
+@media only screen and (max-width: 1023px) {
+  header .elements .openAnim {
+    transform: translateX(-20px);
+  }
+}
+header .socialIcons {
+  display: flex;
+  align-items: center;
+}
+header .socialIcons .langSwitch {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px 10px 2px 2px;
+  border-radius: 24px;
+  background-color: var(--text);
+  transition: all 0.15s;
+}
+header .socialIcons .langSwitch:hover {
+  transform: scale(1.03);
+}
+header .socialIcons .langSwitch :nth-child(1) {
+  font-size: 25px;
+  margin-right: 8px;
+  background-color: var(--background);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .socialIcons .langSwitch p {
+  font-weight: 600;
+  color: var(--background);
+}
+header .socialIcons .langSwitchAnim {
+  animation: langBtnAnim 0.5s ease-in-out;
+}
+header .socialIcons .mail {
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px 10px 2px 2px;
+  border-radius: 24px;
+  background-color: var(--text);
+  transition: all 0.15s;
+}
+header .socialIcons .mail:hover {
+  transform: scale(1.03);
+}
+header .socialIcons .mail :nth-child(1) {
+  font-size: 25px;
+  margin-right: 8px;
+  background-color: var(--background);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .socialIcons .mail p {
+  font-weight: 600;
+  color: var(--background);
+}
+header .socialIcons .greenBg {
+  background-color: #adf6b1 !important;
+}
+
+.headerIcons {
+  font-size: 36px;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 767px) {
+  .headerIcons {
+    font-size: 26px;
+  }
+}
+.headerIcons:hover {
+  transform: scale(1.15);
+}
+
+.linkedinLink {
+  margin-left: 20px;
+}/*# sourceMappingURL=header.css.map */

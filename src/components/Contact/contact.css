@@ -1,0 +1,123 @@
+@keyframes checkAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.contactContainer {
+  min-height: 800px;
+  height: calc(100vh - 44px);
+  margin-bottom: -44px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .contactContainer {
+    justify-content: center;
+  }
+}
+.contactContainer .message {
+  position: absolute;
+  top: 0;
+  padding: 7%;
+}
+.contactContainer .message * {
+  padding: 2px 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(0, 3, 5, 0.8);
+}
+.contactContainer .message h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .contactContainer .message h2 {
+    font-size: 20px;
+  }
+}
+.contactContainer .mail {
+  margin-top: 20%;
+}
+.contactContainer .mail .overBtnText {
+  margin: 0 auto 20px auto;
+  padding: 2px 10px;
+  background-color: rgba(0, 3, 5, 0.8);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contactContainer .mail .mailBtnAnim {
+  filter: invert(1);
+  color: var(--background);
+}
+.contactContainer .mail .mailBtn {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent);
+  margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.2s;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+.contactContainer .mail .mailBtn:hover {
+  transform: scale(1.1);
+}
+.contactContainer .mail .mailBtn .fa-solid {
+  font-size: 60px;
+  padding: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .contactContainer .mail .mailBtn .fa-solid {
+    font-size: 30px;
+    padding: 10px;
+  }
+}
+.contactContainer .mail .mailBtn .fa-check {
+  animation: checkAnim 0.5s ease-in-out;
+}
+.contactContainer .mail .mailBtn p {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  font-weight: 500;
+  padding: 0 20px 0 23px;
+  font-size: 40px;
+  height: 100%;
+  border-left: solid 3px var(--text);
+}
+@media only screen and (max-width: 767px) {
+  .contactContainer .mail .mailBtn p {
+    font-size: 20px;
+  }
+}
+.contactContainer .social .overIconsText {
+  margin: 0 auto 60px auto;
+  padding: 2px 10px;
+  background-color: rgba(0, 3, 5, 0.8);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contactContainer .social .socialIconsContainer {
+  margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contactContainer .social a * {
+  margin: 0 10px;
+  font-size: 60px;
+  transition: all 0.2s ease-in-out;
+}
+.contactContainer .social a *:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=contact.css.map */
